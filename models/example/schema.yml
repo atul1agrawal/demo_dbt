@@ -2,6 +2,8 @@
 version: 2
 
 models:
+
+models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
     columns:
@@ -10,6 +12,15 @@ models:
         tests:
           - unique
           - not_null
+      - name: name
+        description: "The name of the person"
+        tests:
+          - not_null
+      - name: occupation
+        description: "The occupation of the person"
+        tests:
+          - not_null
+
 
   - name: my_second_dbt_model
     description: "A starter dbt model"
