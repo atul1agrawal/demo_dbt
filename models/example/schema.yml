@@ -1,30 +1,43 @@
-
 version: 2
 
 models:
   - name: my_first_dbt_model
     description: "A starter dbt model"
     columns:
+      - name: value
+        description: "Value column"
+        tests:
+          - not_null
       - name: id
-        description: "The primary key for this table"
+        description: "ID column"
         tests:
           - unique
           - not_null
-      - name: name
-        description: "The name of the person"
+      - name: sort
+        description: "Sort column"
         tests:
           - not_null
-      - name: occupation
-        description: "The occupation of the person"
+      - name: readingdatetime
+        description: "Reading datetime column"
         tests:
           - not_null
-
-
-  - name: my_second_dbt_model
-    description: "A starter dbt model"
-    columns:
-      - name: id
-        description: "The primary key for this table"
+      - name: assetid
+        description: "Asset ID column"
         tests:
-          - unique
+          - not_null
+      - name: _airbyte_ab_id
+        description: "Airbyte AB ID column"
+        tests:
+          - not_null
+      - name: _airbyte_emitted_at
+        description: "Airbyte emitted at column"
+        tests:
+          - not_null
+      - name: _airbyte_normalized_at
+        description: "Airbyte normalized at column"
+        tests:
+          - not_null
+      - name: _airbyte_wtt_customerassetsreading_hashid
+        description: "Airbyte wtt_customerassetsreading hash ID column"
+        tests:
           - not_null

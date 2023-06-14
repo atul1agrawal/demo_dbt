@@ -1,29 +1,30 @@
-/*
-    Welcome to your first dbt model!
-    Did you know that you can also configure models directly within SQL files?
-    This will override configurations stated in dbt_project.yml
+-- {{ config(materialized='table') }}
 
-    Try changing "table" to "view" below
-*/
+-- with wtt_customerassetsreading as (
+--     select *
+--     from airbytepoc.wtt_customerassetsreading
+--     limit 3
+-- )
+
+-- select *
+-- from wtt_customerassetsreading
 
 {{ config(materialized='table') }}
 
-with source_data as (
-    select 1 as id, 'John' as name, 'Engineer' as occupation
-    union all
-    select null as id, 'Jane' as name, 'Manager' as occupation
-    -- Add more dummy data rows below
-    union all
-    select 2 as id, 'Bob' as name, 'Designer' as occupation
-    union all
-    select 3 as id, 'Alice' as name, 'Developer' as occupation
+with wtt_customerassetsreading as (
+    select 
+        value,
+        id,
+        sort,
+        readingdatetime,
+        assetid,
+        _airbyte_ab_id,
+        _airbyte_emitted_at,
+        _airbyte_normalized_at,
+        _airbyte_wtt_customerassetsreading_hashid
+    from airbyte.wtt_customerassetsreading
+    limit 3
 )
 
 select *
-from source_data
-
-/*
-    Uncomment the line below to remove records with null `id` values
-*/
-
--- where id is not null
+from wtt_customerassetsreading

@@ -1,0 +1,21 @@
+dbt_demo:
+  target: dev
+  outputs:
+    dev:
+      type: mysql
+      server: localhost
+      port: 3306  
+      database: airbyte 
+      schema: airbyte
+      username: root
+      password: atul
+      # driver: MySQL ODBC 8.0 ANSI Driver
+    # prod:
+    #   type: mysql
+    #   server: [server/host]
+    #   port: [port]  # optional
+    #   database: [schema] # optional, should be same as schema
+    #   schema: [schema]
+    #   username: [username]
+    #   password: [password]
+    #   driver: MySQL ODBC 8.0 ANSI Driver
