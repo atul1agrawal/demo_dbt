@@ -13,10 +13,6 @@ models:
         tests:
           - unique
           - not_null
-      - name: sort
-        description: "Sort column"
-        tests:
-          - not_null
       - name: readingdatetime
         description: "Reading datetime column"
         tests:
