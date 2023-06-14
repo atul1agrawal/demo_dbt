@@ -4,7 +4,7 @@ dbt_demo:
     dev:
       type: mysql
       server: localhost
-      port: 3306  
+      port: 33061 
       database: airbyte 
       schema: airbyte
       username: root
