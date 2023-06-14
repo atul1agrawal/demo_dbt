@@ -15,7 +15,6 @@ with wtt_customerassetsreading as (
     select 
         value,
         id,
-        sort,
         readingdatetime,
         assetid,
         _airbyte_ab_id,
